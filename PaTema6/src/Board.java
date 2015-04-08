@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class Board extends JPanel implements ActionListener{
  
-	private static final KeyEvent VK_W = null;
+	
 	Player p;
 	private Timer timer;
 	public Maze m;
@@ -37,10 +37,10 @@ public class Board extends JPanel implements ActionListener{
 for (int i =0 ;i<m.getRow();i++)
 	for(int j =0 ; j<m.getColumn() ;j ++)
 	{
-		if(m.getPozitie(i, j)==0) g.drawImage(m.getLiber(), i*32, j*32, null);
-		if(m.getPozitie(i, j)==1) g.drawImage(m.getOcupat(), i*32, j*32, null);
+		if(m.getPozitie(i, j)==0) g.drawImage(m.getLiber(), j*32, i*32, null);
+		if(m.getPozitie(i, j)==1) g.drawImage(m.getOcupat(), j*32, i*32, null);
 		//if(m.getPozitie(i, j)==-1) g.drawImage(m.getStart(), i*32, j*32, null);
-		if(m.getPozitie(i, j)==2) g.drawImage(m.getFinish(), i*32, j*32, null);
+		if(m.getPozitie(i, j)==2) g.drawImage(m.getFinish(), j*32, i*32, null);
 	}
 		
 g.drawImage(p.getPlayer(),p.getX(),p.getY(),null);
@@ -77,16 +77,16 @@ public class  Play extends KeyAdapter
  
 		int keycode=e.getKeyCode();
 		if(keycode == KeyEvent.VK_W){ 
-					if(m.moveUp(start[0], start[1])==1&&m.isFreeAt(start[0]-1, start[1])==1)
-						if(m.map1[start[0]-1][start[1]]==2) 
-							{
+					//if(m.moveUp(start[0], start[1])==1&&m.isFreeAt(start[0]-1, start[1])==1)
+					//	if(m.map1[start[0]-1][start[1]]==2) 
+						//	{
 							
 						
 							
-							}			 
-						else	
-
-							{
+						//	}			 
+						//else	
+//
+						//	{
 								p.move(0, -32, 0, -1);
 								
 								start[0]=start[0]-1;
@@ -94,7 +94,7 @@ public class  Play extends KeyAdapter
 								System.out.println(m.toString(""));
 								
 	                	
-						}
+						//}
 		}
 		          
 		if(keycode == KeyEvent.VK_S) 
@@ -107,10 +107,11 @@ public class  Play extends KeyAdapter
 						}
 
 						else
-						
+						{
 							p.move(0, 32, 0, 1);
 						  
 						  start[0]=start[0]+1;
+						}
 						 /// m.map1[start[0]][start[1]]=3;
 						  
 						 
@@ -118,22 +119,22 @@ public class  Play extends KeyAdapter
 		
 		if(keycode == KeyEvent.VK_A)
 		{
-					if(m.moveLeft(start[0], start[1])==1&&m.isFreeAt(start[0],start[1]-1)==1)
-						if(m.map1[start[0]][start[1]-1]==2)
-							{
-							
+					//if(m.moveLeft(start[0], start[1])==1&&m.isFreeAt(start[0],start[1]-1)==1)
+						//if(m.map1[start[0]][start[1]-1]==2)
+						//	{
+						//	
 						
-							}
+							//}
 
-							else
-							{
-								p.move( -32,0, -1, 0);
+							//else
+							//{
+								p.move( -32,0, -32, 0);
 								
 							 start[1]=start[1]-1;
 							// m.map1[start[0]][start[1]]=3;
 							 System.out.println(m.toString(""));
 							
-	                	} 
+	                	//} 
 		}
 		if(keycode == KeyEvent.VK_D)	
 		{
@@ -146,7 +147,7 @@ public class  Play extends KeyAdapter
 
 							else
 							{
-								p.move(32, 0,1,0);
+								p.move(32, 0,32,0);
 							
 							 start[1]=start[1]+1;
 							// m.map1[start[0]][start[1]]=3;

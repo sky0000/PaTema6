@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 
 public class Maze extends KeyAdapter
 {
-public int[][] map1=new int[100][100];
+public int[][] map1=new int[200][200];
 public int row,column;
 String solPart;
 static String solver=new String();
@@ -58,7 +58,7 @@ public Maze()
 		
 	 img= new ImageIcon("D:\\!Scoala\\gitRep\\Tema6\\PaTema6\\PaTema6\\src\\finish.jpg");
 		finish =img.getImage();
-	File locatie= new File("D:\\!Scoala\\gitRep\\Tema4\\PaTema4MazeRunner\\src\\map2.txt");
+	File locatie= new File("D:\\!Scoala\\gitRep\\Tema6\\PaTema6\\PaTema6\\src\\map2.txt");
 	try
 	{
 		FileReader readFrom=new FileReader(locatie);
