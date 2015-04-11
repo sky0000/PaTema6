@@ -16,7 +16,7 @@ public class GUI {
 		JFrame f =new JFrame();
 		f.setTitle("Maze Runner ");
 		f.add(new Board());
-		f.setSize(500, 500);
+		f.setSize(350, 350);
 		f.setLocationRelativeTo(null);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

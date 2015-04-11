@@ -46,19 +46,6 @@ for (int i =0 ;i<m.getRow();i++)
 g.drawImage(p.getPlayer(),p.getTileX()*32,p.getTileY()*32,null);
 	}
 
-/*
-public class Al extends KeyAdapter
-{
-	public void keyPressed(KeyEvent e){
-		
-	}
-	public void keyReleased(KeyEvent e){
-		
-	}
-	public void keyTyped(KeyEvent e){
-	}
-	
-}*/
 
 public class  Play extends KeyAdapter
 {
@@ -81,7 +68,8 @@ public class  Play extends KeyAdapter
 						if(m.map1[start[0]-1][start[1]]==2) 
 							{
 							p.move( 0, -1);
-						
+							start[0]=start[0]-1;
+							JOptionPane.showMessageDialog(null, "FElicitari ,ai un os ");
 							
 							}			 
 						else	
@@ -90,9 +78,9 @@ public class  Play extends KeyAdapter
 								p.move( 0, -1);
 								
 								start[0]=start[0]-1;
-								//m.map1[start[0]][start[1]]=3;
+								m.map1[start[0]][start[1]]=3;
 								System.out.println(m.toString(""));
-								
+								m.map1[start[0]][start[1]]=0;
 	                	
 						}
 		}
@@ -102,8 +90,9 @@ public class  Play extends KeyAdapter
 					if(m.moveDown(start[0], start[1])==1&&m.isFreeAt(start[0]+1, start[1])==1)
 						if(m.map1[start[0]+1][start[1]]==2)
 						{  
-							ok=0;
-						
+							p.move( 0, 1);
+							 start[0]=start[0]+1;
+							JOptionPane.showMessageDialog(null, "FElicitari ,ai un os ");
 						}
 
 						else
@@ -111,8 +100,12 @@ public class  Play extends KeyAdapter
 							p.move( 0, 1);
 						  
 						  start[0]=start[0]+1;
+						  m.map1[start[0]][start[1]]=3;
+
+						 System.out.println(m.toString(""));
+						 m.map1[start[0]][start[1]]=0;
 						}
-						 /// m.map1[start[0]][start[1]]=3;
+						  
 						  
 						 
 						}
@@ -122,7 +115,9 @@ public class  Play extends KeyAdapter
 					if(m.moveLeft(start[0], start[1])==1&&m.isFreeAt(start[0],start[1]-1)==1)
 						if(m.map1[start[0]][start[1]-1]==2)
 							{
-						
+							p.move( -1,0);
+							start[1]=start[1]-1;
+							JOptionPane.showMessageDialog(null, "FElicitari ,ai un os ");
 						
 							}
 
@@ -131,8 +126,9 @@ public class  Play extends KeyAdapter
 								p.move(  -1, 0);
 								
 							 start[1]=start[1]-1;
-							// m.map1[start[0]][start[1]]=3;
+							 m.map1[start[0]][start[1]]=3;
 							 System.out.println(m.toString(""));
+							 m.map1[start[0]][start[1]]=0;
 							
 	                	} 
 		}
@@ -141,8 +137,9 @@ public class  Play extends KeyAdapter
 					if(m.moveRight(start[0], start[1])==1&&m.isFreeAt(start[0], start[1]+1)==1)
 						if(m.map1[start[0]][start[1]+1]==2) 
 							{  
-								ok=0;
-							
+							p.move( 1, 0);
+							start[1]=start[1]+1;
+							JOptionPane.showMessageDialog(null, "FElicitari ,ai un os ");
 							}
 
 							else
@@ -150,8 +147,9 @@ public class  Play extends KeyAdapter
 								p.move(1,0);
 							
 							 start[1]=start[1]+1;
-							// m.map1[start[0]][start[1]]=3;
+							 m.map1[start[0]][start[1]]=3;
 							 System.out.println(m.toString(""));
+							 m.map1[start[0]][start[1]]=0;
 							
 						 	} 
 		}
